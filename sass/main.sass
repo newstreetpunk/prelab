@@ -1,0 +1,255 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 24px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: $default-font
+	overflow-x: hidden
+	font-weight: 500
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+	+media-breakpoint-down(lg)
+		font-size: 20px
+	+media-breakpoint-down(md)
+		font-size: 18px
+	+media-breakpoint-down(sm)
+		font-size: 16px
+a
+	color: #fff
+	font-weight: normal
+	text-decoration: none
+	transition: all .2s ease
+	&:hover
+		text-decoration: none
+		color: $accent
+img
+	display: block
+	max-width: 100%
+	height: 100%
+	object-fit: cover
+	object-position: center
+
+b, strong
+	font-family: $monser-bold
+ul,li
+	list-style: none
+	padding: 0
+	margin: 0
+.font-light
+	font-weight: 300
+
+.logo
+	img
+		+media-breakpoint-down(md)
+			max-width: 70px
+			height: auto
+	+media-breakpoint-down(xs)
+		position: fixed
+		top: 15px
+		right: 20px
+		z-index: 3
+		display: none
+
+.mobile-btn
+	display: none
+	+media-breakpoint-down(xs)
+		display: block
+		width: 50px
+		height: 50px
+		background-color: transparent
+		border: none
+		cursor: pointer
+		padding: 0
+		position: absolute
+		top: 10px
+		left: 20px
+		z-index: 3
+
+.mobile-btn span
+	width: 50px
+	height: 5px
+	background-color: #fff
+	border-radius: 4px
+	display: block
+	margin: 5px auto
+	transform: rotate(0)
+	opacity: 1
+	transition: all .1s ease-in-out
+.mobile-btn.active
+	position: fixed
+.mobile-btn.active span:first-child 
+	transform: rotate(45deg)
+	position: relative
+	top: 10px
+
+.mobile-btn.active span:nth-child(2)
+	opacity: 0
+
+.mobile-btn.active span:last-child
+	transform: rotate(-45deg)
+	position: relative
+	top: -10px
+
+
+/*Header*/
+.header
+	padding: 2.08vmax 0
+	background-color: $accent
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	z-index: 1
+	+media-breakpoint-down(xs)
+		padding: 0
+	&-line
+		display: flex
+		justify-content: space-between
+		align-items: center
+		+media-breakpoint-down(xs)
+			flex-direction: row-reverse
+	.container
+		+media-breakpoint-down(xs)
+			max-width: 100%
+			padding: 0
+/*Menu*/
+.menu
+	+media-breakpoint-down(xs)
+		height: 100vh
+		width: 100%
+		position: fixed
+		top: 0
+		left: 0
+		background: $accent url(../img/menu-bg.png)
+		background-size: cover
+		background-position: center
+		z-index: 2
+		display: none
+	ul
+		display: flex
+		text-transform: uppercase
+		font-family: $monser-bold
+		font-size: 1.46vmax
+		+media-breakpoint-down(md)
+			font-size: 14px
+		+media-breakpoint-down(xs)
+			height: 100vh
+			flex-direction: column
+			align-items: center
+			justify-content: center
+		li
+			padding-left: 7.3vw
+			+media-breakpoint-down(md)
+				padding-left: 25px
+			+media-breakpoint-down(xs)
+				padding-left: 0
+				margin: 17px 0
+			&:first-child
+				padding-left: 0
+			a
+				position: relative
+				&:after
+					content: ''
+					display: block
+					width: 0
+					height: 3px
+					background-color: #fff
+					position: absolute
+					left: 0
+					bottom: -4px
+					transition: all .2s ease-in-out
+				&:hover
+					color: #fff
+					&:after
+						width: 100%
+				+media-breakpoint-down(xs)
+					font-family: Montserrat, sans-serif
+					font-size: 24px
+					font-weight: 500
+					letter-spacing: 0.29px
+					line-height: 32px
+					width: 100%
+
+/*Home page*/
+.home-page
+	min-height: 600px
+	height: 100vh
+	width: 100%
+	background-size: cover
+	background-position: center top
+	color: #fff
+	+media-breakpoint-down(xs)
+		background-image: url(../img/home-bg-mob.jpg) !important
+		background-position: center
+		background-size: cover
+	.header
+		background-color: transparent
+	&__content
+		padding-top: 15vmax
+		position: relative
+		+media-breakpoint-down(md)
+			height: 100%
+			display: flex
+			align-items: center
+		&--row
+			display: flex
+			justify-content: space-between
+			margin-bottom: 46px
+			+media-breakpoint-down(xs)
+				flex-direction: column
+				align-items: center
+				text-align: center
+				margin-bottom: 22px
+			&:last-child
+				margin-bottom: 0
+			img
+				+media-breakpoint-down(lg)
+					max-width: 290px
+					width: 100%
+				+media-breakpoint-down(md)
+					max-width: 220px
+				+media-breakpoint-down(xs)
+					max-width: 150px
+					&:not(:last-child)
+						margin-bottom: 10px
+
+.pralab-descr
+	font-weight: 500
+	+media-breakpoint-down(xs)
+		font-size: 18px
+		font-weight: 300
+		letter-spacing: 0.11px
+		line-height: 24px
+.prelab-slogan
+	text-transform: uppercase
+	text-align: right
+	line-height: 30px
+	+media-breakpoint-down(xs)
+		position: absolute
+		top: 24%
+		font-size: 14px
+		font-weight: 300
+		line-height: 30px
+		br
+			display: none
+	span
+		display: none
+		+media-breakpoint-down(xs)
+			display: inline-block
