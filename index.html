@@ -22,50 +22,26 @@
 
 <body>
 
+	<style>
+
+		a.disabled {
+			pointer-events: none; /* делаем элемент неактивным для взаимодействия */
+			cursor: default; /*  курсор в виде стрелки */
+			color: #888;/* цвет текста серый */
+		}
+
+	</style>
+
 	<div class="home-page" style="background-image: url(img/home-bg.jpg);">
-
-		<header class="header" id="header">
-			<button class="mobile-btn"><span></span><span></span><span></span></button>
-			<div class="container">
-
-				<div class="header-line">
-					<a href="/" class="logo">
-						<img src="img/logo-white.png" alt="PreLab">
-					</a>
-					<nav class="menu">
-						<ul>
-							<li><a href="#">Услуги</a></li>
-							<li><a href="#">Портфель</a></li>
-							<li><a href="#">Контакты</a></li>
-						</ul>
-					</nav>
-				</div>
-				<!-- /.top-line__wrap -->
-
-			</div>
-			<!-- /.container -->
-		</header>
-		<!-- /header-->
-		
-		<div class="home-page__content">
-			<div class="container">
-				
-				<div class="home-page__content--row">
-					<img src="img/pre-big.png" alt="ALT">
-					<img src="img/lab-big.png" alt="ALT">
-				</div>
-				<!-- /.home-page__content--row -->
-				<div class="home-page__content--row">
-					<div class="pralab-descr">PR - агенство<br> ООО «Лаборатория<br> общественных<br> отношений»
-					</div>
-					<span class="prelab-slogan font-light">Наша наука<br> <span>-</span> Ваш успех</span>
-				</div>
-				<!-- /.home-page__content--row -->
-
-			</div>
-				<!-- /.container -->	
+		<div class="container" style="padding-top: 30px;">
+			<ul>
+				<li><a href="/index-one.html">Главная</a></li>
+				<li><a href="/index-two.html">Главная 2</a></li>
+				<li><a href="#" class="disabled">Услуги</a></li>
+				<li><a href="#" class="disabled">Портфель</a></li>
+				<li><a href="#" class="disabled">Контакты</a></li>
+			</ul>
 		</div>
-		<!-- /.home-page__content -->
 
 	</div>
 	<!-- /.home-page -->
