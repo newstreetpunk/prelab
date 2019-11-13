@@ -377,6 +377,8 @@ h2
 			height: auto
 	.header
 		position: relative
+		+media-breakpoint-down(xs)
+			height: 70px
 .content-page
 	h3
 		font-family: $monser-bold
@@ -414,7 +416,6 @@ h2
 			color: #fff
 			line-height: 3.8vmax
 			position: absolute
-			z-index: 1
 			top: 2.6vmax
 			left: 2.6vw
 			transition: all .1s
