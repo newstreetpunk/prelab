@@ -19,6 +19,7 @@ body
 	overflow-x: hidden
 	font-weight: 400
 	color: $text
+	height: 100%
 	input
 		&:focus:required:invalid
 			border-color: red
@@ -387,6 +388,7 @@ h2
 		left: 0
 		bottom: 0
 		width: 100%
+		z-index: -1
 		img
 			width: 100%
 			height: auto
@@ -406,7 +408,7 @@ h2
 .mob-none.df
 	+media-breakpoint-down(xs)
 		display: none
-.s-services
+.s-portfolio
 	position: relative
 	padding-top: 12vmax
 	a.btn
@@ -499,7 +501,7 @@ h2
 		&:first-child
 			margin-top: -12vmax
 			height: 55.4vmax				
-			.s-services__item--link
+			.s-portfolio__item--link
 				top: auto
 				bottom: 2.6vmax
 				max-width: 12.5vw
@@ -590,8 +592,66 @@ textarea
 		line-height: 1.4
 		width: 90% !important
 
+.s-price
+	padding-top: 5.36vmax
+	&-wrap
+		width: 85.4vw
+		margin: 0 auto
+		padding: 0 20px
 
-
+.price
+	&-tabs
+		width: 85.4vw
+		margin: 0 auto
+		font-family: "Montserrat", sans-serif
+		font-size: 1.82vmax
+		font-weight: 500
+		letter-spacing: 0.42px
+		line-height: 2.44vmax
+		text-transform: uppercase
+		margin-left: -20px
+		margin-right: -20px
+		ul
+			display: flex
+			align-items: center
+			width: 100%
+			justify-content: space-between
+			flex-wrap: wrap
+			li
+				cursor: pointer
+				transition: all .15s ease
+				width: auto
+				flex: 0 0 auto
+				margin: 0 20px
+				margin-bottom: 4vmax
+				&:hover, &.active
+					color: $accent
+					text-decoration: underline
+	&-table
+		&__content
+			display: none
+			font-size: 40px
+			height: 200px
+			line-height: 200px
+			text-align: center
+			&.active
+				display: block
+		&__title
+			width: 100%
+			display: flex
+			margin-top: 3vmax
+			span
+				color: #ffffff
+				font-family: $monser-bold
+				font-size: 1.61vmax
+				letter-spacing: 0.31px
+				line-height: 6vmax
+				background-color: #3c3939
+				text-align: center
+				width: 60%
+				&:last-child
+					background-color: $accent
+					width: 40%
 
 
 
