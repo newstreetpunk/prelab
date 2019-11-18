@@ -19,8 +19,10 @@ body
 	overflow-x: hidden
 	font-weight: 400
 	color: $text
+	min-height: 100vh
 	&.price
-		height: 100%
+		background-size: cover
+		background-position: inherit
 	input
 		&:focus:required:invalid
 			border-color: red
@@ -599,6 +601,9 @@ textarea
 		width: 85.4vw
 		margin: 0 auto
 		padding: 0 20px
+		+media-breakpoint-down(xs)
+			width: 100%
+			padding: 0
 
 .price
 	&-tabs
@@ -612,31 +617,110 @@ textarea
 		text-transform: uppercase
 		margin-left: -20px
 		margin-right: -20px
+		+media-breakpoint-down(xs)
+			width: 100%
+			margin: 0
+			font-size: 18px
 		ul
 			display: flex
 			align-items: center
 			width: 100%
 			justify-content: space-between
 			flex-wrap: wrap
+			+media-breakpoint-down(xs)
+				justify-content: flex-start
 			li
 				cursor: pointer
 				transition: all .15s ease
 				width: auto
 				flex: 0 0 auto
 				margin: 0 20px
-				margin-bottom: 4vmax
+				margin-bottom: 3vmax
+				+media-breakpoint-down(xs)
+					margin-bottom: 40px
+				br
+					+media-breakpoint-down(xs)
+						display: none
 				&:hover, &.active
 					color: $accent
 					text-decoration: underline
 	&-table
 		&__content
 			display: none
-			font-size: 40px
-			height: 200px
-			line-height: 200px
-			text-align: center
 			&.active
 				display: block
+			> ul
+				background-color: rgba(#fff, .63)
+				padding: 5.2vh 0
+				position: relative
+				+media-breakpoint-down(xs)
+					padding: 20px 0
+				&:after
+					content: ''
+					display: block
+					width: 2px
+					height: 100%
+					background-color: #d8d8d8
+					position: absolute
+					right: 40%
+					top: 0
+				> li
+					+media-breakpoint-down(xs)
+						margin-bottom: 15px
+					.li-items
+						display: flex
+						align-items: center
+					> ul
+						background-color: transparent
+						padding: 0
+						width: 100%
+						> li
+							span
+								color: #565454
+								font-weight: 300
+							.title
+								padding-left: 28%
+								+media-breakpoint-down(xs)
+									padding-left: 60px
+								&:before
+									left: 40%
+									opacity: .95
+									+media-breakpoint-down(xs)
+										display: none
+					span
+						display: block
+						color: #3c3939
+						font-size: 1.6vmax
+						font-weight: 400
+						letter-spacing: 0.31px
+						line-height: 5vmax
+						+media-breakpoint-down(xs)
+							font-size: 14px
+					.title
+						width: 60%
+						padding-left: 23%
+						position: relative
+						+media-breakpoint-down(xs)
+							padding-left: 45px
+							line-height: 1.6
+						&:before
+							content: ''
+							display: block
+							background-image: url(../img/svg/file.svg)
+							background-size: cover
+							position: absolute
+							top: 50%
+							transform: translateY(-50%)
+							left: 31%
+							width: 18px
+							height: 16px
+							+media-breakpoint-down(xs)
+								left: 20px						
+					.price
+						width: 40%
+						color: #565454
+						font-weight: 300
+						padding-left: 14%
 		&__title
 			width: 100%
 			display: flex

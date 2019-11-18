@@ -17,7 +17,7 @@ $(function() {
 
 	$('ul.tabs__caption').on('click', 'li:not(.active)', function() {
 		$(this).addClass('active').siblings().removeClass('active')
-		.closest('div.tabs').find('div.price-table__content').hide().eq($(this).index()).slideDown(500);
+		.closest('div.tabs').find('div.price-table__content').hide(500).eq($(this).index()).show(450);
 	});
 
 });
