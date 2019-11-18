@@ -387,6 +387,12 @@ h2
 	background-position: center bottom
 	background-repeat: no-repeat
 	padding-bottom: 16vmax
+	+media-breakpoint-down(xs)
+		padding-top: 70px
+	.logo
+		display: block
+		top: 8px
+		position: relative
 	.bg-page
 		position: absolute
 		left: 0
@@ -400,6 +406,10 @@ h2
 		position: relative
 		+media-breakpoint-down(xs)
 			height: 70px
+			position: fixed
+			top: 0
+			left: 0
+			width: 100%
 .content-page
 	h3
 		font-family: $monser-bold
@@ -556,6 +566,8 @@ input:not([type="checkbox"], [type="radio"], [type="submit"]), textarea
 	outline: none
 	+media-breakpoint-down(xs)
 		margin-bottom: 15px
+		font-size: 16px
+
 input::placeholder, textarea::placeholder
 	color: #a0a0a0
 textarea:focus::placeholder, input:focus::placeholder
